@@ -1,0 +1,244 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fdfdfd; /* svetla pozadina sa suptilnim tonovima */
+    color: #333;
+    border-radius: 20px; /* za zaobljene ivice */
+}
+
+.movie-header {
+    display: flex;
+    margin-bottom: 40px;
+    gap: 30px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.movie-poster {
+    flex: 0 0 300px;
+}
+
+.movie-poster img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.movie-info {
+    flex: 1;
+    color: #333;
+}
+
+.movie-info h1 {
+    margin-bottom: 10px;
+    font-size: 36px;
+    font-family: 'Lora', serif;
+    color: rgb(94, 94, 94);
+}
+
+.original-title {
+    color: #b0b0b0;
+    font-weight: normal;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.movie-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.metadata-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.metadata-item i {
+    color: rgb(94, 94, 94);
+}
+
+.genre-list {
+    margin-bottom: 25px;
+}
+
+.genre-chip {
+    display: inline-block;
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+    padding: 8px 16px;
+    margin: 0 6px 6px 0;
+    font-size: 14px;
+}
+
+.short-description {
+    font-size: 20px;
+    margin-bottom: 30px;
+    font-style: italic;
+    color: #888;
+}
+
+.action-buttons {
+    margin-top: 30px;
+}
+
+mat-divider {
+    margin: 35px 0;
+    border-top: 1px solid #f0f0f0;
+}
+
+.movie-description,
+.movie-cast,
+.screenings-section,
+.reviews-section {
+    margin-bottom: 40px;
+}
+
+.movie-description h2,
+.movie-cast h2,
+.screenings-section h2,
+.reviews-section h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    padding-left: 15px;
+    color: black;
+    font-family: 'Poppins', sans-serif;
+}
+
+.movie-description p {
+    line-height: 1.8;
+    white-space: pre-line;
+    color: #555;
+}
+
+.cast-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.cast-item {
+    background-color: #f9f9f9;
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.actor-name {
+    font-weight: bold;
+    color: black;
+}
+
+.screenings-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+.screening-card {
+    width: 220px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 15px;
+    background-color: #fff;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.screening-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.screening-date,
+.screening-time,
+.screening-hall,
+.screening-price,
+.screening-seats {
+    margin-bottom: 15px;
+    font-size: 16px;
+}
+
+.screening-seats.low-seats {
+    color: #ff66b2;
+    font-weight: bold;
+}
+
+.no-screenings,
+.no-reviews {
+    text-align: center;
+    margin: 40px 0;
+    color: #aaa;
+}
+
+.review-summary {
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.rating-stats {
+    display: flex;
+    gap: 25px;
+}
+
+.positive-rating {
+    font-size: 20px;
+    color: #4caf50;
+}
+
+.negative-rating {
+    font-size: 20px;
+    color: #f44336;
+}
+
+.reviews-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.review-positive {
+    background-color: rgba(76, 175, 80, 0.2);
+    color: #4caf50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.review-negative {
+    background-color: rgba(244, 67, 54, 0.2);
+    color: #f44336;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (max-width: 768px) {
+    .movie-header {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .movie-poster {
+        flex: 0 0 auto;
+        text-align: center;
+    }
+    
+    .movie-poster img {
+        max-width: 280px;
+    }
+    
+    .screenings-list {
+        justify-content: center;
+    }
+}

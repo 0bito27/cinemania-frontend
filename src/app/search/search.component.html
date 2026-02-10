@@ -1,0 +1,107 @@
+
+<div class="wrapper" *ngIf="dataSource">
+    <h1>- Search Movies -</h1>
+    <mat-card class="search-card">
+        <mat-card-content>
+            <div class="search-input-row">
+                <mat-form-field class="search-input">
+                    <mat-label>Search</mat-label>
+                    <input type="text" matInput placeholder="Enter movie title, description..." (keyup)="doFilterChain()"
+                        [(ngModel)]="userInput">
+                    <button *ngIf="userInput" matSuffix mat-icon-button aria-label="Clear" (click)="userInput=''; doFilterChain()">
+                        <i class="fa-solid fa-times"></i>
+                    </button>
+                </mat-form-field>
+            </div>
+            
+            <div class="search-filters">
+                <div class="filter-group">
+                    <mat-form-field>
+                        <mat-label>Genre</mat-label>
+                        <mat-select (selectionChange)="doFilterChain()" [(ngModel)]="selectedGenre">
+                            <mat-option [value]="null">All Genres</mat-option>
+                            <mat-option *ngFor="let genre of genreList" [value]="genre">
+                                {{genre}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                        <mat-label>Director</mat-label>
+                        <mat-select (selectionChange)="doFilterChain()" [(ngModel)]="selectedDirector">
+                            <mat-option [value]="null">All Directors</mat-option>
+                            <mat-option *ngFor="let director of directorList" [value]="director">
+                                {{director}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                
+                <div class="filter-group">
+                    <mat-form-field>
+                        <mat-label>Actor</mat-label>
+                        <mat-select (selectionChange)="doFilterChain()" [(ngModel)]="selectedActor">
+                            <mat-option [value]="null">All Actors</mat-option>
+                            <mat-option *ngFor="let actor of actorList" [value]="actor">
+                                {{actor}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                
+                    <mat-form-field>
+                        <mat-label>Release Year</mat-label>
+                        <mat-select (selectionChange)="doFilterChain()" [(ngModel)]="selectedYear">
+                            <mat-option [value]="null">All Years</mat-option>
+                            <mat-option *ngFor="let year of releaseYears" [value]="year">
+                                {{year}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+            </div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="doReset()">
+                <i class="fa-solid fa-ban"></i> Reset Filters
+            </button>
+        </mat-card-actions>
+    </mat-card>
+    
+    <div class="results-info">
+        <p>Found {{dataSource.length}} {{dataSource.length === 1 ? 'movie' : 'movies'}}</p>
+    </div>
+    
+    <div class="movie-grid" *ngIf="dataSource.length > 0">
+        <mat-card class="movie-card" appearance="outlined" *ngFor="let movie of dataSource">
+            <img mat-card-image [src]="movie.poster || utils.generatePosterFallback(movie.title)" [alt]="movie.title">
+            <mat-card-content>
+                <h2>{{movie.title}}</h2>
+                <p>Release date: {{utils.formatDate(movie.startDate)}}</p>
+                <p>Director: {{movie.director.name}}</p>
+                <p>Duration: {{utils.formatRuntime(movie.runTime)}}</p>
+                <p>
+                    <span *ngFor="let genreItem of movie.movieGenres" class="genre-chip">{{genreItem.genre.name}}</span>
+                </p>
+            </mat-card-content>
+            <mat-card-actions>
+                <a mat-button [routerLink]="['/details/', movie.movieId]">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i> Details
+                </a>
+                <a mat-button [routerLink]="['/details/'+movie.movieId+'/reserve']">
+                    <i class="fa-solid fa-ticket"></i> Book Now
+                </a>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    
+    <div class="no-results" *ngIf="dataSource.length === 0">
+        <mat-card appearance="outlined">
+            <mat-card-content>
+                <h2><i class="fa-solid fa-triangle-exclamation"></i> No movies found</h2>
+                <p>Try adjusting your search criteria or <a (click)="doReset()" class="reset-link">reset all filters</a>.</p>
+            </mat-card-content>
+        </mat-card>
+    </div>
+</div>
+
+<app-loading *ngIf="!dataSource" />

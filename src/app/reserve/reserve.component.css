@@ -1,0 +1,146 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7; /* Dodavanje svetle pozadine za bolji kontrast */
+}
+
+h1 {
+    margin-bottom: 30px;
+    padding-left: 15px;
+    color: black;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.reservation-container {
+    display: flex;
+    gap: 30px;
+    justify-content: space-between;
+}
+
+.movie-details {
+    flex: 0 0 300px;
+}
+
+.movie-card {
+    height: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card img {
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px 8px 0 0;
+}
+
+.movie-card h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+    padding: 10px;
+}
+
+.movie-card p {
+    margin: 8px 0;
+    padding: 0 10px;
+    color: #555;
+}
+
+.movie-card i {
+    width: 20px;
+    color: rgb(94, 94, 94);
+    margin-right: 10px;
+}
+
+.reservation-form {
+    flex: 1;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.full-width {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 6px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+}
+
+.available-seats {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.available-seats i {
+    margin-right: 10px;
+}
+
+.low-seats {
+    color: rgb(94, 94, 94);
+    font-weight: bold;
+}
+
+.error-message {
+    color: #f44336;
+    margin-top: -10px;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.price-summary {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: white;
+}
+
+.price-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.price-item.total {
+    border-top: 1px solid #444;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+mat-card-actions {
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.reservation-note {
+    text-align: center;
+    color: #aaa;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.reservation-note i {
+    margin-right: 5px;
+}
+
+@media (max-width: 768px) {
+    .reservation-container {
+        flex-direction: column;
+    }
+
+    .movie-details {
+        flex: 0 0 auto;
+        margin-bottom: 20px;
+    }
+}

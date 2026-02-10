@@ -1,0 +1,96 @@
+.section-title {
+    margin: 35px 20px 20px;
+    color: black;
+    font-size: 45px;
+    font-family: 'NSimSun', sans-serif;
+    padding-left: 20px;
+    text-transform: uppercase; /* Da dodamo dašak elegancije */
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 25px;
+}
+
+.movie-card {
+    width: 320px;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    background-color: #f9f9f9;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.movie-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.movie-card img {
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.movie-card h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+    font-family: 'Lora', serif;
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+.movie-card p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #777; /* Suptilna boja za tekst */
+    font-style: italic;
+}
+
+.coming-soon {
+    opacity: 0.85;
+}
+
+.ribbon {
+    position: absolute;
+    top: 20px;
+    right: -8px;
+    padding: 8px 12px;
+    background-color: rgb(94, 94, 94);
+    color: white;
+    font-weight: bold;
+    z-index: 1;
+    transform: rotate(45deg);
+    transform-origin: top right;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    font-size: 16px;
+    border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+    .movie-grid {
+        gap: 15px;
+    }
+    
+    .movie-card {
+        width: 100%;
+        max-width: 380px;
+        margin: 15px auto;
+    }
+}
+
+.loading {
+    text-align: center;
+    width: 600px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #ff66b2; /* Roze boja koja se slaže sa temom */
+}

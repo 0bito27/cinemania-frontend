@@ -1,0 +1,105 @@
+html, body {
+    height: 100%;
+    background-color: rgb(94, 94, 94);
+    color: #000000;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+a {
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: black;
+}
+
+.container {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.loading {
+    text-align: center;
+    width: 300px;
+    padding: 30px;
+    margin: 50px auto;
+    font-size: 18px;
+    color: #fff;
+    animation: loadingAnimation 1.5s infinite;
+}
+
+@keyframes loadingAnimation {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
+}
+
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.auth-card {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #2d3035;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.full-width {
+    width: 100%;
+}
+
+.error-message {
+    color: #f44336;
+}
+
+.success-message {
+    color: #4caf50;
+}
+
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.mat-mdc-card {
+    background-color: #2d3035;
+}
+
+.mat-mdc-form-field {
+    margin-bottom: 16px;
+}
+
+@media only screen and (max-width: 800px) {
+    .wrapper {
+        padding: 15px;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+        padding: 0 10px;
+    }
+
+    .auth-card {
+        width: 100%; /* Autentična kartica postaje 100% širine na manjim ekranima */
+    }
+}

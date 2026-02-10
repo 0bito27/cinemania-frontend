@@ -1,0 +1,143 @@
+.wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 20px;
+    padding-left: 15px;
+    color: black;
+    font-family: NSimSun, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 45px;
+}
+
+.search-card {
+    margin-bottom: 30px;
+    width: 100%;
+}
+
+.search-input {
+    width: 98%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+.search-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.filter-group {
+    display: flex;
+    flex: 1;
+    gap: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.filter-group mat-form-field {
+    flex: 1;
+}
+
+.results-info {
+    margin-bottom: 15px;
+    color: #aaa;
+    font-style: italic;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+}
+
+.movie-card {
+    width: calc(25% - 20px);
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.movie-card img {
+    height: 350px;
+    object-fit: cover;
+}
+
+.movie-card h2 {
+    font-size: 18px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.movie-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.genre-chip {
+    display: inline-block;
+    background-color: rgb(94, 94, 94);
+    border-radius: 16px;
+    padding: 4px 8px;
+    margin: 2px;
+    font-size: 12px;
+}
+
+.no-results {
+    text-align: center;
+    margin-top: 30px;
+    background-color: rgba(255, 64, 129, 0.05); /* Suptilna pozadina za "no-results" sekciju */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.no-results h2 {
+    color: rgb(94, 94, 94);
+    font-size: 22px;
+}
+
+.reset-link {
+    color: rgb(94, 94, 94);
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+    .movie-card {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 900px) {
+    .movie-card {
+        width: calc(50% - 20px);
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .movie-card {
+        width: 100%;
+    }
+    
+    .search-filters {
+        flex-direction: column;
+        gap: 0;
+    }
+}
