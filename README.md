@@ -73,5 +73,4 @@ This project demonstrates frontend architecture, API integration, client-side st
 ![User](screenshots/user.PNG)
 ![Movie Screen 1](screenshots/movie1.PNG)
 ![Movie Screen 2](screenshots/movie2.PNG)
-![About](screenshots/about.PNG)
 
