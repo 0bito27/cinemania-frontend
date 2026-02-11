@@ -66,12 +66,12 @@ This project demonstrates frontend architecture, API integration, client-side st
 ## Screenshots
 
 ![Home](screenshots/homelogged.PNG)
-![Search](screenshots/search.png)
-![Reservation](screenshots/reservation.png)
-![Registration](screenshots/register.png)
-![Log-in](screenshots/login.png)
-![User](screenshots/user.png)
-![Movie Screen 1](screenshots/movie1.png)
-![Movie Screen 2](screenshots/movie2.png)
-![About](screenshots/about.png)
+![Search](screenshots/search.PNG)
+![Reservation](screenshots/reservation.PNG)
+![Registration](screenshots/register.PNG)
+![Log-in](screenshots/login.PNG)
+![User](screenshots/user.PNG)
+![Movie Screen 1](screenshots/movie1.PNG)
+![Movie Screen 2](screenshots/movie2.PNG)
+![About](screenshots/about.PNG)
 
