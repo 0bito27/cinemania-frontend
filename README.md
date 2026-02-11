@@ -62,3 +62,10 @@ This project demonstrates frontend architecture, API integration, client-side st
 - Payment gateway integration
 - JWT-based authentication with backend validation
 - Role-based authorization
+
+## Screenshots
+
+![Home](screenshots/home.png)
+![Search](screenshots/search.png)
+![Reservation](screenshots/reservation.png)
+
